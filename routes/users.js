@@ -12,8 +12,14 @@ const userSchema = mongoose.Schema({
   contact: Number,
   boards: {
     type: Array,
-    default: []
-  }
+    default: [],
+  },
+  posts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "post",
+    },
+  ],
 });
 
 userSchema.plugin(plm);
